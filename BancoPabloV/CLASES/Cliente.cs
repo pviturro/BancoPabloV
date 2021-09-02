@@ -7,14 +7,15 @@ namespace BancoPabloV.CLASES
 {
     class Client : IUserable
     {
-        public Client(string name, string phoneNumber)
+        private string Name { get; set; }
+        private string Email { get; set; }
+        private BankAccount bankAccount { get; set; }
+     
+        public Client(string name, string email)
         {
             Name = name;
-            PhoneNumber = phoneNumber;
+            Email = email;
         }
-
-        private string Name { get; set; }
-        private string PhoneNumber { get; set; }
 
     }
 }
