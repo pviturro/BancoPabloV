@@ -1,12 +1,30 @@
-﻿using System;
+﻿using BancoPabloV.INTERFACES;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BancoPabloV.CLASES
 {
-    class Notification
+    class Notification : INotificable
     {
-        private string Message { get; set; }
+        public string Title { get; private set; }
+        public string Message { get; private set; }
+
+        public Notification (string title, string message)
+        {
+            this.Title = title;
+            this.Message = message;
+        }
+
+        public string sendSms(string title, string message)
+        {
+            return title + " " + message;
+        }
+
+        public string sendEmail(string title, string message)
+        {
+            return title + " " + message;
+        }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BancoPabloV.SERVICIOS;
+using System;
 
 namespace BancoPabloV
 {
@@ -6,7 +7,11 @@ namespace BancoPabloV
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            NotificationService notifService = new NotificationService();
+            notifService.sendNotification("Hola Mundo!", "Hola mundo he dicho leches");
+
+
         }
     }
 }
