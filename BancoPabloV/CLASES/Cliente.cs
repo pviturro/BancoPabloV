@@ -9,12 +9,13 @@ namespace BancoPabloV.CLASES
     {
         private string Name { get; set; }
         private string Email { get; set; }
-        private BankAccount bankAccount { get; set; }
+        public BankAccount bankAccount { get; set; }
      
         public Client(string name, string email)
         {
             Name = name;
             Email = email;
+            bankAccount = new BankAccount(name);
         }
 
     }

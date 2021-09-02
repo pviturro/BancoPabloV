@@ -12,10 +12,10 @@ namespace BancoPabloV.SERVICIOS
             if (!Validate(email))
                 throw new Exception("Email inválido");
 
-            var title = "Bienvenido al banco!";
+            var title = "Bienvenido al banco " + name + "!";
             var message = "Gracias por crear tu cuenta en el banco";
             Notification registerNotification = new Notification(title, message);
-            registerNotification.sendEmail(title, message);
+            Console.WriteLine(registerNotification.sendEmail(title, message));
             return new Client(name, email);
 
         }

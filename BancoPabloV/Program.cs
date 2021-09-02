@@ -8,8 +8,15 @@ namespace BancoPabloV
         static void Main(string[] args)
         {
 
-            NotificationService notifService = new NotificationService();
-            notifService.sendNotification("Hola Mundo!", "Hola mundo he dicho leches");
+            ClientService clientService = new ClientService();
+            BankAccountService bankAccountService = new BankAccountService();
+
+            var pablo = clientService.Register("Pablo", "pabloviturrod@gmail.com");
+            var adrian = clientService.Register("Adrian", "adrian@email.com");
+
+            pablo.bankAccount.BalanceRaise(1000);
+            bankAccountService.Transaction(pablo.bankAccount, adrian.bankAccount, 200);
+ 
 
 
         }
