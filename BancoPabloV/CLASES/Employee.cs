@@ -6,15 +6,13 @@ namespace BancoPabloV.CLASES
 {
     class Employee : Client
     {
-        private string Name { get; set; }
+        public string Name { get; set; }
         private string Email { get; set; }
         private BankAccount bankAccount { get; set; }
 
-        public Employee(string name, string email)
+        public Employee(string name, string email) : base(name, email)
         {
-            Name = name;
-            Email = email;
-            bankAccount = new BankAccount(name);
+            bankAccount = null;
         }
     }
 }

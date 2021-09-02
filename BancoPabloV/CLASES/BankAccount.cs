@@ -24,8 +24,6 @@ namespace BancoPabloV.CLASES
         {
             if (quantity <= this.Balance)
                 this.Balance -= quantity;
-            else
-                throw new Exception("No tienes suficientes fondos para hacer ese movimiento");
         }
     }
 }

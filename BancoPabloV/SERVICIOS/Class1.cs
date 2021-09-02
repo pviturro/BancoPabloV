@@ -12,8 +12,15 @@ namespace BancoPabloV.SERVICIOS
             string title = sender.Owner + " ha enviado " + quantity + "€ a " + receiver.Owner;
             string message = "La transacción no ha dado ningún error y todos felices!";
             Notification transactionNotif = new Notification(title, message);
-            sender.BalanceReduction(quantity);
-            receiver.BalanceRaise(quantity);
+            try
+            {
+                sender.BalanceReduction(quantity);
+                receiver.BalanceRaise(quantity);
+            } catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            
             Console.WriteLine(transactionNotif.sendSms(title, message));
         }
     }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace BancoPabloV.CLASES
 {
-    class Client : IUserable
+    class Client
     {
-        private string Name { get; set; }
+        public string Name { get; set; }
         private string Email { get; set; }
         public BankAccount bankAccount { get; set; }
      
