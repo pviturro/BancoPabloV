@@ -11,6 +11,7 @@ namespace BancoPabloV
             
             ClientService clientService = new ClientService();
             BankAccountService bankAccountService = new BankAccountService();
+            EmployeeService employeeService = new EmployeeService();
 
             var empleadoChema = new Employee("Chema", "chemita@banco.com");
             var pablo = clientService.Register("Pablo", "pabloviturrod@gmail.com");
@@ -18,8 +19,11 @@ namespace BancoPabloV
 
             pablo.bankAccount.BalanceRaise(1000);
             bankAccountService.Transaction(pablo.bankAccount, adrian.bankAccount, 200);
-            
 
+
+            employeeService.InterestRateCharge(pablo);
+            employeeService.InterestRateCharge(adrian);
+            employeeService.CreateAccount(empleadoChema);
         }
     }
 }
