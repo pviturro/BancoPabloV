@@ -16,15 +16,11 @@ namespace BancoPabloV.CLASES
             this.Message = message;
         }
 
-        public string sendSms(string title, string message)
+        public string sendNotification(string title, string message)
         {
             return title + " " + message;
         }
 
-        public string sendEmail(string title, string message)
-        {
-            return title + " " + message;
-        }
 
     }
 }

@@ -10,11 +10,11 @@ namespace BancoPabloV.SERVICIOS
         public void Transaction(BankAccount sender, BankAccount receiver, decimal quantity)
         {
             string title = sender.Owner + " ha enviado " + quantity + "€ a " + receiver.Owner;
-            string message = "La transacción no ha dado ningún error y todos felices!";
+            string message = "Tranascción completada";
             Notification transactionNotif = new Notification(title, message);
             sender.BalanceReduction(quantity);
             receiver.BalanceRaise(quantity);
-            Console.WriteLine(transactionNotif.sendSms(title, message));
+            Console.WriteLine(transactionNotif.sendNotification(title, message));
         }
     }
 }

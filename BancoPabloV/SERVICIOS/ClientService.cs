@@ -15,7 +15,7 @@ namespace BancoPabloV.SERVICIOS
             var title = "Bienvenido al banco " + name + "!";
             var message = "Gracias por crear tu cuenta en el banco";
             Notification registerNotification = new Notification(title, message);
-            Console.WriteLine(registerNotification.sendEmail(title, message));
+            Console.WriteLine(registerNotification.sendNotification(title, message));
             return new Client(name, email);
 
         }
