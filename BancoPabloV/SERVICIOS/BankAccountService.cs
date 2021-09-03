@@ -9,7 +9,7 @@ namespace BancoPabloV.SERVICIOS
     {
         public void Transaction(BankAccount sender, BankAccount receiver, decimal quantity)
         {
-            string title = sender.Owner + " ha enviado " + quantity + "€ a " + receiver.Owner;
+            string title = $"{sender.Owner} ha enviado {quantity}€ a {receiver.Owner}";
             string message = "Tranascción completada";
             Notification transactionNotif = new Notification(title, message);
             sender.BalanceReduction(quantity);

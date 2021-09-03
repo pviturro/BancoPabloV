@@ -11,7 +11,7 @@ namespace BancoPabloV.SERVICIOS
         public void sendNotification (string title, string message)
         {
             var notif = new Notification(title, message);
-            Console.WriteLine(notif.Title+ " " + notif.Message);
+            Console.WriteLine($"{notif.Title} {notif.Message}");
         }
 
     }

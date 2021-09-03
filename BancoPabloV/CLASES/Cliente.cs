@@ -5,17 +5,11 @@ using System.Text;
 
 namespace BancoPabloV.CLASES
 {
-    class Client
+    class Client : User
     {
-        public string Name { get; set; }
-        private string Email { get; set; }
-        public BankAccount bankAccount { get; set; }
      
-        public Client(string name, string email)
+        public Client(string name, string email) : base (name, email)
         {
-            Name = name;
-            Email = email;
-            bankAccount = new BankAccount(name);
         }
 
     }

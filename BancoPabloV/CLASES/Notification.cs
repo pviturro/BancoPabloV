@@ -18,7 +18,7 @@ namespace BancoPabloV.CLASES
 
         public string sendNotification(string title, string message)
         {
-            return title + " " + message;
+            return $"{title} {message}";
         }
 
 

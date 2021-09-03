@@ -9,7 +9,7 @@ namespace BancoPabloV.SERVICIOS
     {
         public void CreateAccount(Employee employee)
         {
-            if (employee.bankAccount != null)
+            if (employee.bankAccount == null)
                 employee.bankAccount = new BankAccount(employee.Name);
             else
                 throw new Exception("Ya tienes una cuenta en el banco");
@@ -20,7 +20,7 @@ namespace BancoPabloV.SERVICIOS
             decimal interestRate = 0.02m;
             decimal result = client.bankAccount.Balance * interestRate;
             client.bankAccount.BalanceReduction(result);
-            Console.WriteLine("Se ha cargado " + result + "€ a la cuenta de " + client.Name + " por el tipo de interés");
+            Console.WriteLine($"Se ha cargado {result}€ a la cuenta de {client.Name} por el tipo de interés");
         }
 
     }
