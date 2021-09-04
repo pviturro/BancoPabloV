@@ -19,8 +19,7 @@ namespace BancoPabloV
             var empleadoChema = userService.Register("Chema", "chema@banco.com", Usertype.employee);
 
             pablo.bankAccount.AddBalance(1000);
-            bankAccountService.Transaction(pablo.bankAccount, adrian.bankAccount, 200);
-
+            bankAccountService.Transaction(pablo, adrian, 200);
 
             employeeService.InterestRateCharge(pablo);
             employeeService.InterestRateCharge(adrian);
