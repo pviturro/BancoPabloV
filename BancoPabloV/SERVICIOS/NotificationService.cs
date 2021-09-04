@@ -1,11 +1,12 @@
 ﻿using BancoPabloV.CLASES;
+using BancoPabloV.INTERFACES;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BancoPabloV.SERVICIOS
 {
-    class NotificationService
+    class NotificationService : INotificable
     {
 
         public void sendNotification (string title, string message)
@@ -13,6 +14,5 @@ namespace BancoPabloV.SERVICIOS
             var notif = new Notification(title, message);
             Console.WriteLine($"{notif.Title} {notif.Message}");
         }
-
     }
 }

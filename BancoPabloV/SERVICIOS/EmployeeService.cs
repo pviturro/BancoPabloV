@@ -15,11 +15,11 @@ namespace BancoPabloV.SERVICIOS
                 throw new Exception("Ya tienes una cuenta en el banco");
         }
 
-        public void InterestRateCharge(Client client)
+        public void InterestRateCharge(User client)
         {
             decimal interestRate = 0.02m;
             decimal result = client.bankAccount.Balance * interestRate;
-            client.bankAccount.BalanceReduction(result);
+            client.bankAccount.RemoveBalance(result);
             Console.WriteLine($"Se ha cargado {result}€ a la cuenta de {client.Name} por el tipo de interés");
         }
 

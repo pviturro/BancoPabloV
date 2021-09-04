@@ -1,6 +1,7 @@
 ﻿using BancoPabloV.CLASES;
 using BancoPabloV.SERVICIOS;
 using System;
+using static BancoPabloV.CLASES.Constants;
 
 namespace BancoPabloV
 {
@@ -8,22 +9,21 @@ namespace BancoPabloV
     {
         static void Main(string[] args)
         {
-            
-            ClientService clientService = new ClientService();
+
+            UserService userService = new UserService();
             BankAccountService bankAccountService = new BankAccountService();
             EmployeeService employeeService = new EmployeeService();
 
-            var empleadoChema = new Employee("Chema", "chemita@banco.com");
-            var pablo = clientService.Register("Pablo", "pabloviturrod@gmail.com");
-            var adrian = clientService.Register("Adrian", "adrian@email.com");
+            var pablo = userService.Register("Pablo", "pabloviturrod@gmail.com", Usertype.client);
+            var adrian = userService.Register("Adrian", "adrian@email.com", Usertype.client);
+            var empleadoChema = userService.Register("Chema", "chema@banco.com", Usertype.employee);
 
-            pablo.bankAccount.BalanceRaise(1000);
+            pablo.bankAccount.AddBalance(1000);
             bankAccountService.Transaction(pablo.bankAccount, adrian.bankAccount, 200);
 
 
             employeeService.InterestRateCharge(pablo);
             employeeService.InterestRateCharge(adrian);
-            employeeService.CreateAccount(empleadoChema);
         }
     }
 }

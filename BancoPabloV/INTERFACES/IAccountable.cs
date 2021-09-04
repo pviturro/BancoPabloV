@@ -6,7 +6,7 @@ namespace BancoPabloV.INTERFACES
 {
     interface IAccountable
     {
-        public void BalanceRaise(decimal quantity);
-        public void BalanceReduction(decimal quantity);
+        public void AddBalance(decimal quantity);
+        public void RemoveBalance(decimal quantity);
     }
 }

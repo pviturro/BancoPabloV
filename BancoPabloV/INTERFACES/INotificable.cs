@@ -4,9 +4,9 @@ using System.Text;
 
 namespace BancoPabloV.INTERFACES
 {
-    interface INotificable
+    public interface INotificable
     {
-        public string sendNotification(string title, string message);
+        public void sendNotification(string title, string message);
 
     }
 }

@@ -15,12 +15,12 @@ namespace BancoPabloV.CLASES
             this.Owner = Owner;
         }
 
-        public void BalanceRaise(decimal quantity)
+        public void AddBalance(decimal quantity)
         {
             this.Balance += quantity;
         }
 
-        public void BalanceReduction(decimal quantity)
+        public void RemoveBalance(decimal quantity)
         {
             if (quantity <= this.Balance)
                 this.Balance -= quantity;

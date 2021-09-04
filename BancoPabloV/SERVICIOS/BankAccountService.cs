@@ -7,13 +7,15 @@ namespace BancoPabloV.SERVICIOS
 {
     class BankAccountService
     {
+        private Notification transactionNotif;
+        
         public void Transaction(BankAccount sender, BankAccount receiver, decimal quantity)
         {
             string title = $"{sender.Owner} ha enviado {quantity}€ a {receiver.Owner}";
             string message = "Tranascción completada";
-            Notification transactionNotif = new Notification(title, message);
-            sender.BalanceReduction(quantity);
-            receiver.BalanceRaise(quantity);
+            sender.RemoveBalance(quantity);
+            receiver.AddBalance(quantity);
+            transactionNotif = new Notification(title, message);
             Console.WriteLine(transactionNotif.sendNotification(title, message));
         }
     }
