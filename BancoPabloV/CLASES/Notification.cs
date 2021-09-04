@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BancoPabloV.CLASES
 {
-    class Notification : INotificable
+    class Notification
     {
         public string Title { get; private set; }
         public string Message { get; private set; }
@@ -16,10 +16,7 @@ namespace BancoPabloV.CLASES
             this.Message = message;
         }
 
-        public string sendNotification(string title, string message)
-        {
-            return $"{title} {message}";
-        }
+
 
 
     }

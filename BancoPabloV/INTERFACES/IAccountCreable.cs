@@ -5,8 +5,8 @@ using System.Text;
 
 namespace BancoPabloV.INTERFACES
 {
-    interface INotificable
+    interface IAccountCreable
     {
-        public string sendNotification(User receiver, Notification notification);
+        public void CreateAccount(User user);
     }
 }

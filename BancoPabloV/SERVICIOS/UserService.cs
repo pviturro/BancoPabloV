@@ -7,7 +7,7 @@ using static BancoPabloV.CLASES.Constants;
 
 namespace BancoPabloV.SERVICIOS
 {
-    class UserService : IRegisterable
+    class UserService : IRegisterable, IAccountCreable
     {
         private EmailService emailService = new EmailService();
         public User Register(string name, string email, Usertype usertype)
@@ -26,6 +26,7 @@ namespace BancoPabloV.SERVICIOS
             }
             else if (usertype.Equals(Usertype.employee))
             {
+
                 var employee = new Employee(name, email);
                 emailService.sendEmail(employee, registerNotification);
                 return employee;
@@ -42,5 +43,15 @@ namespace BancoPabloV.SERVICIOS
 
             return true;
         }
+
+        public void CreateAccount(User user)
+        {
+            if (user.bankAccount == null)
+                user.bankAccount = new BankAccount(user.Name);
+            else
+                Console.WriteLine("Ya tienes una cuenta en el banco");
+        }
+
+
     }
 }

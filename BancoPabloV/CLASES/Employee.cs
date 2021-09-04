@@ -9,7 +9,6 @@ namespace BancoPabloV.CLASES
 
         public Employee(string name, string email) : base(name, email)
         {
-            bankAccount = null;
         }
     }
 }

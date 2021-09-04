@@ -16,13 +16,15 @@ namespace BancoPabloV
 
             var pablo = userService.Register("Pablo", "pabloviturrod@gmail.com", Usertype.client);
             var adrian = userService.Register("Adrian", "adrian@email.com", Usertype.client);
-            var empleadoChema = userService.Register("Chema", "chema@banco.com", Usertype.employee);
+            var empleadoChema = (Employee)userService.Register("Chema", "chema@banco.com", Usertype.employee);
 
             pablo.bankAccount.AddBalance(1000);
             bankAccountService.Transaction(pablo, adrian, 200);
+            userService.CreateAccount(empleadoChema);
 
-            employeeService.InterestRateCharge(pablo);
-            employeeService.InterestRateCharge(adrian);
+
+            employeeService.InterestRateCharge(empleadoChema, pablo);
+            employeeService.InterestRateCharge(empleadoChema, adrian);
         }
     }
 }
